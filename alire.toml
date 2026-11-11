@@ -1,0 +1,14 @@
+name = "toko_cookies"
+description = "Sebuah REST API untuk toko cookies dengan Ada Web Server"
+version = "0.1.0-dev"
+
+authors = ["Shinee"]
+maintainers = ["Shinee <althafmain@gmail.com>"]
+licenses = "MIT"
+website = ""
+tags = ["backend", "cookies", "rest-api", "shinee"]
+
+executables = ["toko_cookies"]
+
+[[depends-on]]
+aws = "^25.2.0"

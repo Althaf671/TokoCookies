@@ -1,0 +1,26 @@
+with "config/toko_cookies_config.gpr";
+project Toko_Cookies is
+
+   for Source_Dirs use ("src/**", "config/");
+   for Object_Dir use "obj/" & Toko_Cookies_Config.Build_Profile;
+   for Create_Missing_Dirs use "True";
+   for Exec_Dir use "bin";
+   for Main use ("toko_cookies.adb");
+
+   package Compiler is
+      for Default_Switches ("Ada") use Toko_Cookies_Config.Ada_Compiler_Switches;
+   end Compiler;
+
+   package Binder is
+      for Switches ("Ada") use ("-Es"); --  Symbolic traceback
+   end Binder;
+
+   package Linker is
+      for Default_Switches ("Ada") use ("-nodefaultrpaths");
+   end Linker;
+
+   package Install is
+      for Artifacts (".") use ("share");
+   end Install;
+
+end Toko_Cookies;
